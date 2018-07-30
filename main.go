@@ -123,7 +123,7 @@ func dbOps(db string, data []weather) error {
 
 	fmt.Println("Creating weather table...")
 	createWeatherDb := `CREATE TABLE WEATHER (id integer not null primary key, city text)`
-	cr, err := sqldb.Exec(createWeatherDb)
+	_, err = sqldb.Exec(createWeatherDb)
 	fmt.Println("weather table has been created")
 
 	if err != nil {
